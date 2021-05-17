@@ -3,7 +3,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h3><i class="fas fa-user-tie"></i> Data kontak</h3>
+            <h3><i class="fas fa-address-book"></i> Data kontak</h3>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -18,26 +18,10 @@
     <section class="content">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title" style="margin-top:5px;"><i class="fas fa-list-ul"></i> Daftar  User</h3>
-                <div class="card-tools">
-                  <a href="tambahuser.php" class="btn btn-sm btn-info float-right">
-                  <i class="fas fa-plus"></i> Tambah  User</a>
-                </div>
+                <h3 class="card-title" style="margin-top:5px;"><i class="fas fa-list-ul"></i> Daftar kontak</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-              <div class="col-md-12">
-                  <form method="" action="">
-                    <div class="row">
-                        <div class="col-md-4 bottom-10">
-                          <input type="text" class="form-control" id="kata_kunci" name="katakunci">
-                        </div>
-                        <div class="col-md-5 bottom-10">
-                          <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i>&nbsp; Search</button>
-                        </div>
-                    </div><!-- .row -->
-                  </form>
-                </div><br>
               <div class="col-sm-12">
                   <div class="alert alert-success" role="alert">Data Berhasil Ditambahkan</div>
                   <div class="alert alert-success" role="alert">Data Berhasil Diubah</div>
@@ -46,36 +30,22 @@
                     <thead>                  
                       <tr>
                         <th width="5%">No</th>
-                        <th width="30%">Nama</th>
-                        <th width="30%">Email</th>
-                        <th width="20%">Level</th>
+                        <th width="30%">Media</th>
+                        <th width="30%">Kontak</th>
                         <th width="15%"><center>Aksi</center></th>
                       </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td>1.</td>
-                        <td>Salnan Ratih</td>
-                        <td>salnanratih@gmail.com</td>
-                        <td>superadmin</td>
+                        <td>Whatsapp</td>
+                        <td>0812-3456-7891</td>
                         <td align="center">
-                          <a href="edituser.php" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
-                          <a href="detailuser.php" class="btn btn-xs btn-info" title="Detail"><i class="fas fa-eye"></i></a>
-                          <a href="#" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
+                          <a href="index.php?include=kontak/edit" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
+                          <a href="index.php?include=kontak/detail" class="btn btn-xs btn-info" title="Detail"><i class="fas fa-eye"></i></a>                        
                         </td>
                       </tr>
-                      <tr>
-                        <td>2.</td>
-                        <td>Salnan Ratih</td>
-                        <td>salnanratih@gmail.com</td>
-                        <td>superadmin</td>
-                        <td align="center">
-                          <a href="edituser.php" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
-                           <a href="detailuser.php" class="btn btn-xs btn-info" title="Detail"><i class="fas fa-eye"></i></a>
-                           <a href="#" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
-                        </td>
-                      </tr>
-                      
+                    
                     </tbody>
                   </table>  
               </div>

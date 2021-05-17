@@ -21,7 +21,7 @@
                 <h3 class="card-title" style="margin-top:5px;"><i class="fas fa-list-ul"></i> Daftar jenis kamera</h3>
                 <div class="card-tools">
                   <a href="index.php?include=jenis-kamera/tambah" class="btn btn-sm btn-info float-right">
-                  <i class="fas fa-plus"></i> Tambah  jenis kamera</a>
+                  <i class="fas fa-plus"></i> Tambah jenis kamera</a>
                 </div>
               </div>
               <!-- /.card-header -->

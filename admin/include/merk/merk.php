@@ -18,10 +18,10 @@
     <section class="content">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title" style="margin-top:5px;"><i class="fas fa-list-ul"></i> Daftar  User</h3>
+                <h3 class="card-title" style="margin-top:5px;"><i class="fas fa-list-ul"></i> Daftar Merk</h3>
                 <div class="card-tools">
-                  <a href="tambahuser.php" class="btn btn-sm btn-info float-right">
-                  <i class="fas fa-plus"></i> Tambah  User</a>
+                  <a href="index.php?include=merk/tambah" class="btn btn-sm btn-info float-right">
+                  <i class="fas fa-plus"></i> Tambah merk</a>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -46,36 +46,19 @@
                     <thead>                  
                       <tr>
                         <th width="5%">No</th>
-                        <th width="30%">Nama</th>
-                        <th width="30%">Email</th>
-                        <th width="20%">Level</th>
+                        <th width="30%">Merk</th>
                         <th width="15%"><center>Aksi</center></th>
                       </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>1.</td>
-                        <td>Salnan Ratih</td>
-                        <td>salnanratih@gmail.com</td>
-                        <td>superadmin</td>
+                        <td>1</td>
+                        <td>Canon</td>
                         <td align="center">
-                          <a href="edituser.php" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
-                          <a href="detailuser.php" class="btn btn-xs btn-info" title="Detail"><i class="fas fa-eye"></i></a>
+                          <a href="index.php?include=merk/edit" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
                           <a href="#" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
                         </td>
-                      </tr>
-                      <tr>
-                        <td>2.</td>
-                        <td>Salnan Ratih</td>
-                        <td>salnanratih@gmail.com</td>
-                        <td>superadmin</td>
-                        <td align="center">
-                          <a href="edituser.php" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
-                           <a href="detailuser.php" class="btn btn-xs btn-info" title="Detail"><i class="fas fa-eye"></i></a>
-                           <a href="#" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
-                        </td>
-                      </tr>
-                      
+                      </tr>                      
                     </tbody>
                   </table>  
               </div>
@@ -91,6 +74,5 @@
               </div>
             </div>
             <!-- /.card -->
-
     </section>
     <!-- /.content -->

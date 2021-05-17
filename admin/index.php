@@ -131,7 +131,7 @@
                     }
                     // Menu Profil
                     elseif($include=='edit-profil'){
-                      include("include/editprofil.php");
+                      include("include/profil/editprofil.php");
                     }else{
                       include("include/profil/profil.php");
                     } 
@@ -159,7 +159,7 @@
                   <?php include("includes/sidebar.php") ?>
                   <div class="content-wrapper">
                       <?php
-                    include("include/profil.php");
+                    include("include/profil/profil.php");
                     ?>
                   </div>
                   <!-- ./wrapper -->
