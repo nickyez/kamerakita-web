@@ -7,7 +7,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="tag.php">Tag</a></li>
+              <li class="breadcrumb-item"><a href="index.php?include=tag">Tag</a></li>
               <li class="breadcrumb-item active">Tambah Tag</li>
             </ol>
           </div>
@@ -22,7 +22,7 @@
       <div class="card-header">
         <h3 class="card-title"style="margin-top:5px;"><i class="far fa-list-alt"></i> Form Tambah Tag</h3>
         <div class="card-tools">
-          <a href="tag.php" class="btn btn-sm btn-warning float-right"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
+          <a href="index.php?include=tag" class="btn btn-sm btn-warning float-right"><i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
         </div>
       </div>
       <!-- /.card-header -->

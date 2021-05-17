@@ -20,7 +20,7 @@
               <div class="card-header">
                 <h3 class="card-title" style="margin-top:5px;"><i class="fas fa-list-ul"></i> Daftar  Tag</h3>
                 <div class="card-tools">
-                  <a href="tambahtag.php" class="btn btn-sm btn-info float-right"><i class="fas fa-plus"></i> Tambah  Tag</a>
+                  <a href="index.php?include=tag/tambah" class="btn btn-sm btn-info float-right"><i class="fas fa-plus"></i> Tambah  Tag</a>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -51,18 +51,18 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>1.</td>
-                      <td>PHP</td>
+                      <td>1</td>
+                      <td>Terlaris</td>
                       <td align="center">
-                        <a href="edittag.php" class="btn btn-xs btn-info"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="index.php?include=tag/edit" class="btn btn-xs btn-info"><i class="fas fa-edit"></i> Edit</a>
                         <a href="#" class="btn btn-xs btn-warning"><i class="fas fa-trash"></i> Hapus</a>
                       </td>
                     </tr>
                     <tr>
                       <td>2.</td>
-                      <td>MySQL</td>
+                      <td>Tersedia</td>
                       <td align="center">
-                        <a href="edittag.php" class="btn btn-xs btn-info"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="index.php?include=tag/edit" class="btn btn-xs btn-info"><i class="fas fa-edit"></i> Edit</a>
                         <a href="#" class="btn btn-xs btn-warning"><i class="fas fa-trash"></i> Hapus</a>
                       </td>
                     </tr>

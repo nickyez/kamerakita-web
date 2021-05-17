@@ -26,18 +26,6 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-              <div class="col-md-12">
-                  <form method="" action="">
-                    <div class="row">
-                        <div class="col-md-4 bottom-10">
-                          <input type="text" class="form-control" id="kata_kunci" name="katakunci">
-                        </div>
-                        <div class="col-md-5 bottom-10">
-                          <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i>&nbsp; Search</button>
-                        </div>
-                    </div><!-- .row -->
-                  </form>
-                </div><br>
               <div class="col-sm-12">
                   <div class="alert alert-success" role="alert">Data Berhasil Ditambahkan</div>
                   <div class="alert alert-success" role="alert">Data Berhasil Diubah</div>
