@@ -1,4 +1,21 @@
-    <!-- Content Header (Page header) -->
+<?php 
+if((isset($_GET['aksi']))&&(isset($_GET['data']))){
+	if($_GET['aksi']=='hapus'){
+		$id_merk = $_GET['data'];
+		//hapus merk
+		$sql_de = "delete from `merk` where `id_merk` = '$id_merk'";
+		mysqli_query($koneksi,$sql_de);
+	}
+}
+if(isset($_POST["katakunci"])){
+	$katakunci_tag = $_POST["katakunci"];
+	$_SESSION['katakunci_merk'] = $katakunci_merk; 
+}if(isset($_SESSION['katakunci_merk'])){
+	$katakunci_merk = $_SESSION['katakunci_merk'];
+}
+?>
+   
+   <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -20,14 +37,14 @@
               <div class="card-header">
                 <h3 class="card-title" style="margin-top:5px;"><i class="fas fa-list-ul"></i> Daftar Merk</h3>
                 <div class="card-tools">
-                  <a href="index.php?include=merk/tambah" class="btn btn-sm btn-info float-right">
+                  <a href="index.php?include=tambah-merk" class="btn btn-sm btn-info float-right">
                   <i class="fas fa-plus"></i> Tambah merk</a>
                 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
               <div class="col-md-12">
-                  <form method="" action="">
+                  <form method="post" action="index.php?include=merk">
                     <div class="row">
                         <div class="col-md-4 bottom-10">
                           <input type="text" class="form-control" id="kata_kunci" name="katakunci">
@@ -39,8 +56,15 @@
                   </form>
                 </div><br>
               <div class="col-sm-12">
-                  <div class="alert alert-success" role="alert">Data Berhasil Ditambahkan</div>
-                  <div class="alert alert-success" role="alert">Data Berhasil Diubah</div>
+                 <?php if(!empty($_GET['notif'])){?>
+					<?php if($_GET['notif']=="tambahberhasil"){?>
+						<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan</div>
+					<?php }else if($_GET['notif']=="editberhasil"){?>
+						<div class="alert alert-success" role="alert">Data Berhasil Diubah</div>
+					<?php }else if($_GET['notif']=="hapusberhasil"){?>
+						<div class="alert alert-success" role="alert">Data Berhasil Dihapus</div>
+					<?php }?>
+				<?php }?>
               </div>
               <table class="table table-bordered">
                     <thead>                  
@@ -51,14 +75,23 @@
                       </tr>
                     </thead>
                     <tbody>
+						<?php
+						$sql_k = "SELECT `id_merk`,`merk` FROM `merk` ORDER BY `merk`";
+						$query_k = mysqli_query($koneksi,$sql_k);
+						$no = 1;
+						while($data_k = mysqli_fetch_row($query_k)){
+							$id_merk = $data_k[0];
+							$merk = $data_k[1];
+						?>
                     <tr>
-                        <td>1</td>
-                        <td>Canon</td>
+                        <td><?php echo $no;?></td>
+                        <td><?php echo $merk;?></td>
                         <td align="center">
-                          <a href="index.php?include=merk/edit" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
-                          <a href="#" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
+                          <a href="index.php?include=edit-merk&data=<?php echo $id_merk;?>" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
+                          <a href="javascript:if(confirm('Anda yakin ingin menghapus data <?php echo $merk; ?>?'))window.location.href = 'index.php?include=merk&aksi=hapus&data=<?php echo $id_merk;?>&notif=hapusberhasil'" class="btn btn-xs btn-warning"><i class="fas fa-trash" title="Hapus"></i></a>                         
                         </td>
-                      </tr>                      
+                      </tr>  
+						<?php $no++;}?>
                     </tbody>
                   </table>  
               </div>
