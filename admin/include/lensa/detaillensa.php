@@ -1,3 +1,27 @@
+<?php
+  if(isset($_GET['data'])){
+    $id_lensa = $_GET['data'];
+    //get data lensa
+    $sql = "SELECT `l`.`foto`, `l`.`nama`, `jl`.`jenis`, `l`.`focal_length`, `m`.`merk`,
+                  `l`.`maximum_aperture`, `l`.`mount_type`, `l`.`format`, `l`.`harga` 
+            FROM `lensa` `l`
+            INNER JOIN `jenis_lensa` `jl` ON `l`.`id_jenis`=`jl`.`id_jenis`
+            INNER JOIN `merk` `m` ON `l`.`id_merk`= `m`.`id_merk`
+            WHERE `l`.`id_lensa`='$id_lensa'";
+    $query = mysqli_query($koneksi,$sql);
+    while($data = mysqli_fetch_row($query)){
+      $foto = $data[0];
+      $nama = $data[1];
+      $jenis = $data[2];
+      $focal_length = $data[3];
+      $merk = $data[4];
+      $maximum_aperture = $data[5];
+      $mount_type = $data[6];
+      $format = $data[7];
+      $harga = $data[8];
+    }
+  }
+?>
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
@@ -31,48 +55,40 @@
                             <tbody>
                                 <tr>
                                     <td><strong>Foto Produk<strong></td>
-                                    <td><img src="produk/lensa/lensa001.jpg" class="img-fluid" width="200px;"></td>
+                                    <td><img src="produk/lensa/<?php echo $foto; ?>" class="img-fluid" width="200px;"></td>
                                 </tr>
                                 <tr>
                                     <td width="20%"><strong>Nama Produk<strong></td>
-                                    <td width="80%">Canon EF 14mm f/2.8L II USM</td>
+                                    <td width="80%"><?php echo $nama; ?></td>
                                 </tr>
                                 <tr>
                                     <td width="20%"><strong>Jenis lensa<strong></td>
-                                    <td width="80%">Wide Angle</td>
+                                    <td width="80%"><?php echo $jenis; ?></td>
                                 </tr>
                                 <tr>
                                     <td width="20%"><strong>Merk<strong></td>
-                                    <td width="80%">Canon</td>
+                                    <td width="80%"><?php echo $merk; ?></td>
                                 </tr>
-                                <tr>
-                                    <td><strong>Tag<strong></td>
-                                    <td>
-                                        <ul>
-                                            <li>Tersedia</li>
-                                            <li>Terlaris</li>
-                                        </ul>
-                                    </td>
-                                </tr>
+                                
                                 <tr>
                                     <td width="20%"><strong>Focal Length<strong></td>
-                                    <td width="80%">14mm</td>
+                                    <td width="80%"><?php echo $focal_length; ?></td>
                                 </tr>
                                 <tr>
                                     <td width="20%"><strong>Maximum Aperture<strong></td>
-                                    <td width="80%">1.4</td>
+                                    <td width="80%"><?php echo $maximum_aperture; ?></td>
                                 </tr>
                                 <tr>
                                     <td width="20%"><strong>Mount Type<strong></td>
-                                    <td width="80%">EF</td>
+                                    <td width="80%"><?php echo $mount_type; ?></td>
                                 </tr>
                                 <tr>
                                     <td width="20%"><strong>Format<strong></td>
-                                    <td width="80%">Full Frame</td>
+                                    <td width="80%"><?php echo $format; ?></td>
                                 </tr>
                                 <tr>
                                     <td width="20%"><strong>Harga<strong></td>
-                                    <td width="80%">Rp.250000/hari</td>
+                                    <td width="80%"><?php echo $harga; ?></td>
                                 </tr>
                             </tbody>
                         </table>
