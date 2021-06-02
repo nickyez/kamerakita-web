@@ -29,18 +29,23 @@
       <!-- form start -->
       </br>
       <div class="col-sm-10">
-          <div class="alert alert-danger" role="alert">Maaf data nama wajib di isi</div>
+      <?php if((!empty($_GET['notif']))&&(!empty($_GET['jenis']))){?>
+                <?php if($_GET['notif']=="tambahkosong"){?>
+                  <div class="alert alert-danger" role="alert">Maaf data
+                  <?php echo $_GET['jenis'];?> wajib di isi</div>
+                <?php } ?>
+              <?php } ?>
       </div>
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="POST" action="index.php?include=konfirmasi-tambah-lensa" enctype="multipart/form-data">
         <div class="card-body">
             <div class="form-group row">
                 <label for="foto" class="col-sm-12 col-form-label"><span class="text-info"><i class="fas fa-lensa-circle"></i> <u>Data lensa</u></span></label>
             </div>          
             <div class="form-group row">
-                <label for="foto" class="col-sm-3 col-form-label">Cover lensa </label>
+                <label for="foto" class="col-sm-3 col-form-label">Foto Lensa</label>
                 <div class="col-sm-7">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="cover" id="customFile">
+                        <input type="file" class="custom-file-input" name="foto" id="id_lensa">
                         <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
                 </div>
@@ -48,27 +53,45 @@
             <div class="form-group row">
                 <label for="jenis" class="col-sm-3 col-form-label">Jenis lensa</label>
                 <div class="col-sm-7">
-                    <select class="form-control" id="jenis" name="jenis_lensa">
-                        <option value="0">--Pilih--</option>
-                        <option value="1">Wide Lensa</option>
-                        <option value="2">Fisheye</option>
+                    <select class="form-control" id="id_jenis" name="jenis">
+                    <option value="">- Pilih Jenis Lensa -</option>
+                      <?php
+                        $sql_k = "SELECT `id_jenis`, `jenis` 
+                                  FROM `jenis_lensa` 
+                                  ORDER BY `jenis`";
+                        $query_k = mysqli_query($koneksi, $sql_k);
+                        while($data_k = mysqli_fetch_row($query_k)){
+                          $id_jenis = $data_k[0];
+                          $jenis = $data_k[1];
+                      ?>
+                      <option value="<?php echo $id_jenis; ?>"><?php echo $jenis; ?></option>
+                      <?php } ?>
                     </select>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="jenis" class="col-sm-3 col-form-label">Merk</label>
+                <label for="merk" class="col-sm-3 col-form-label">Merk</label>
                 <div class="col-sm-7">
-                    <select class="form-control" id="jenis" name="jenis_lensa">
-                        <option value="0">--Pilih--</option>
-                        <option value="1">Canon</option>
-                        <option value="2">Nikon</option>
+                    <select class="form-control" id="id_merk" name="merk">
+                        <option value="0">--Pilih Merk--</option>
+                        <?php
+                        $sql_m = "SELECT `id_merk`, `merk` 
+                                  FROM `merk` 
+                                  ORDER BY `merk`";
+                        $query_m = mysqli_query($koneksi, $sql_m);
+                        while($data_m = mysqli_fetch_row($query_m)){
+                          $id_merk = $data_m[0];
+                          $merk = $data_m[1];
+                      ?>
+                      <option value="<?php echo $id_merk; ?>"><?php echo $merk; ?></option>
+                      <?php } ?>
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="nim" class="col-sm-3 col-form-label">Nama Produk</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="produk" id="produk" value="">
+                    <input type="text" class="form-control" name="nama" id="nama" value="">
                 </div>
             </div>
             <div class="form-group row">
@@ -78,9 +101,9 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="max_aperture" class="col-sm-3 col-form-label">Maximum Aperture</label>
+                <label for="maximum_aperture" class="col-sm-3 col-form-label">Maximum Aperture</label>
                 <div class="col-sm-7">
-                    <input type="text" class="form-control" name="max_aperture" id="max_aperture" value="">
+                    <input type="text" class="form-control" name="maximum_aperture" id="maximum_aperture" value="">
                 </div>
             </div>
             <div class="form-group row">
@@ -101,15 +124,7 @@
                     <input type="text" class="form-control" name="harga" id="harga" value="">
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="hobi" class="col-sm-3 col-form-label">Tag</label>
-                <div class="col-sm-7">
-                    <input type="checkbox" name="tag[]" value="rlaris"> Terlaris</br>
-                    <input type="checkbox" name="tag[]" value="oduk Terbaru"> Produk Terbaru</br>
-                    <input type="checkbox" name="tag[]" value="rsedia"> Tersedia</br>
-                    <input type="checkbox" name="tag[]" value="sih disewa"> Masih disewa</br>
-                </div>
-            </div>
+            
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
