@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <?php include("includes/head.php") ?> 
+  <?php 
+      session_start();
+      include('../koneksi/koneksi.php');
+      if(isset($_GET['data'])){
+        $id_jenis = $_GET['data'];
+        $_SESSION['id_jenis']=$id_jenis;
+
+        $sql_d = "SELECT `jenis` FROM `jenis` WHERE `id_jenis` = '$id_jenis'";
+        $query_d = mysqli_query($koneksi, $sql_d);
+        while($data_d = mysqli_fetch_row($query_d)){
+          $jenis = $data_d[0];
+        }
+      }
+  ?>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+<?php include("includes/header.php") ?>
+
+  <?php include("includes/sidebar.php") ?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -29,9 +53,13 @@
       <!-- form start -->
       </br>
       <div class="col-sm-10">
-          <div class="alert alert-danger" role="alert">Maaf data jenis kamera wajib di isi</div>
-      </div>
-      <form class="form-horizontal">
+        <?php if(!empty($_GET['notif'])){ ?>
+          <?php if($_GET['notif']=="editkosong"){ ?>
+            <div class="alert alert-danger" role="alert">Maaf data jenis kamera wajib di isi</div>
+          <?php } ?>
+        <?php } ?>
+            </div>
+      <form class="form-horizontal" action="konfirmasieditjenis.php" method="post">
         <div class="card-body">
           <div class="form-group row">
             <label for="jenis-kamera" class="col-sm-3 col-form-label">jenis kamera</label>
@@ -53,3 +81,13 @@
 
     </section>
     <!-- /.content -->
+    </div>
+  <!-- /.content-wrapper -->
+  <?php include("includes/footer.php") ?>
+
+</div>
+<!-- ./wrapper -->
+
+<?php include("includes/script.php") ?>
+</body>
+</html>
