@@ -1,0 +1,12 @@
+
+<?php 
+    include('../koneksi/koneksi.php');
+    $tag = $_POST['tag'];
+    if(empty($tag)){
+        header("Location:tambahjeniskamera.php?notif=tambahkosong");
+    }else{
+        $sql = "INSERT INTO `jenis` (`jenis`) values ('$jenis')";
+        mysqli_query($koneksi, $sql);
+        header("Location:jeniskamera.php?notif=tambahberhasil");
+    }
+?
