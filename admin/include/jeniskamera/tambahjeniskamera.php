@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?php include("includes/head.php") ?>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -29,9 +38,14 @@
       <!-- form start -->
       </br>
       <div class="col-sm-10">
-          <div class="alert alert-danger" role="alert">Maaf data jenis kamera wajib di isi</div>
+          <?php if(!empty($_GET['notif'])){ ?>
+            <?php if($_GET['notif']=="tambahkosong"){ ?>
+              <div class="alert alert-danger" role="alert">Maaf data jenis kamera wajib di isi</div>
+            <?php }
+          } ?>
+
       </div>
-      <form class="form-horizontal">
+      <form class="form-horizontal" action="konfirmasitambahjenis.php" method="post"> 
         <div class="card-body">
           <div class="form-group row">
             <label for="jenis-kamera" class="col-sm-3 col-form-label">jenis kamera</label>
