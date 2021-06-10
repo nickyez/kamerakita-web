@@ -1,0 +1,17 @@
+options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^([-a-z]*)$ index.php?include=$1 [L]
+
+RewriteRule ^([-a-z]*)-data-([0-9]*)$ index.php?include=$1&data=$2 [L]
+
+RewriteRule ^([-a-z]*)-data-([0-9]*)_notif-([a-zA-Z_]*)$ index.php?include=$1&data=$2&notif=$3 [L]
+
+RewriteRule ^([-a-z]*)-data-([0-9]*)_notif-([a-zA-Z_]*)-jenis-([a-z]*)$ index.php?include=$1&data=$2&notif=$3&jenis=$4 [L]
+
+RewriteRule ^([-a-z]*)_notif-([-a-zA-Z_]*)$ index.php?include=$1&notif=$2 [L]
+
+RewriteRule ^([-a-z]*)-halaman-([0-9]*)$ index.php?include=$1&halaman=$2 [L]
+
+RewriteRule ^([-a-z]*)-data-([0-9]*)-mode-([a-z]*)_notif-([-a-zA-Z_]*)$ index.php?include=$1&data=$2&aksi=$3&notif=$4 [L]

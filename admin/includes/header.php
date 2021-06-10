@@ -17,7 +17,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a href="signout.php" class="nav-link">
+        <a href="index.php?include=signout" class="nav-link">
             Sign Out&nbsp; 
             <i class="fas fa-sign-out-alt"></i>
         </a>

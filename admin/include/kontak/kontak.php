@@ -23,8 +23,14 @@
               <!-- /.card-header -->
               <div class="card-body">
               <div class="col-sm-12">
-                  <div class="alert alert-success" role="alert">Data Berhasil Ditambahkan</div>
-                  <div class="alert alert-success" role="alert">Data Berhasil Diubah</div>
+                <?php if(!empty($_GET['notif'])){
+                  if($_GET['notif']=="editberhasil"){
+                    ?>
+                    <div class="alert alert-success" role="alert">Data Berhasil Diubah</div>
+                    <?php
+                  }
+                } ?>
+                  
               </div>
               <table class="table table-bordered">
                     <thead>                  
@@ -36,31 +42,29 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <?php 
+                          $sql_k = "SELECT `id_kontak`,`media`,`kontak` FROM `kontak`";
+                          $query_k = mysqli_query($koneksi, $sql_k);
+                          $no = 1;
+                          while($data_k = mysqli_fetch_row($query_k)){
+                            $id_kontak = $data_k[0];
+                            $media = $data_k[1];
+                            $kontak = $data_k[2];
+                          
+                      ?>
                     <tr>
-                        <td>1.</td>
-                        <td>Whatsapp</td>
-                        <td>0812-3456-7891</td>
+                        <td><?php echo $no; ?></td>
+                        <td><?php echo $media; ?></td>
+                        <td><?php echo $kontak; ?></td>
                         <td align="center">
-                          <a href="index.php?include=kontak/edit" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>
-                          <a href="index.php?include=kontak/detail" class="btn btn-xs btn-info" title="Detail"><i class="fas fa-eye"></i></a>                        
+                          <a href="index.php?include=kontak/edit&data=<?php echo $id_kontak; ?>" class="btn btn-xs btn-info" title="Edit"><i class="fas fa-edit"></i></a>                        
                         </td>
                       </tr>
-                    
+                      <?php $no++; ?>
+                    <?php } ?>
                     </tbody>
                   </table>  
               </div>
               <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <ul class="pagination pagination-sm m-0 float-right">
-                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- /.card -->
-
     </section>
     <!-- /.content -->

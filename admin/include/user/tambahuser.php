@@ -34,7 +34,7 @@
           <?php } ?>
       </div>
     
-      <form class="form-horizontal" action="index.php?include=konfirmasi-tambah-user" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal" action="index.php?include=user/tambah/konfirmasi" method="post" enctype="multipart/form-data">
         <div class="card-body">
           <div class="form-group row">
             <label for="foto" class="col-sm-12 col-form-label"><span class="text-info"><i class="fas fa-user-circle"></i> <u>Data User</u></span></label>

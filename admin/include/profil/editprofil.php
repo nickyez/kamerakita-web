@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="index.php">Profil</a></li>
+                                <li class="breadcrumb-item"><a href="index">Profil</a></li>
                                 <li class="breadcrumb-item active">Edit Profil</li>
                             </ol>
                         </div>
@@ -45,7 +45,7 @@
                       <?php if((!empty($_GET['notif'])) && (!empty($_GET['jenis']))){ ?>
                         <div class="alert alert-danger" role="alert">Maaf data <?php echo $_GET['jenis']; ?> wajib di isi</div><?php } ?>
                     </div>
-                    <form class="form-horizontal" action="index.php?include=konfirmasi-edit-profil" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="konfirmasi-edit-profil" method="post" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group row">
                                 <label for="foto" class="col-sm-12 col-form-label"><span class="text-info">

@@ -50,7 +50,7 @@
                 <div class="alert alert-danger" role="alert">Maaf data <?php echo $_GET['jenis']; ?> wajib di
                     isi</div><?php } ?>
             </div>
-            <form class="form-horizontal" action="index.php?include=konfirmasi-edit-user" method="post"
+            <form class="form-horizontal" action="index.php?include=user/edit/konfirmasi" method="post"
                 enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="form-group row">

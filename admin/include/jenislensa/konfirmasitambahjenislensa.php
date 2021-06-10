@@ -1,13 +1,10 @@
-<?php
-    $id_jenis = $_POST['id_jenis'];
-    $jenis = $_POST['jenis'];
-    
-    if(empty($jenis)){
-        header("Location:index.php?include=jenis-lensa/tambah&notif=tambahkosong&jenis=Jenis Lensa");
+<?php 
+    $jenis_lensa = $_POST['jenis_lensa'];
+    if(empty($jenis_lensa)){
+        header("Location:tambah-jenis-lensa_notif-tambahkosong");
     }else{
-        $sql = "INSERT INTO `jenis_lensa` (`id_jenis`,`jenis`)
-                VALUES ('$id_jenis', '$jenis')";
-        mysqli_query($koneksi,$sql);
-        header("Location:index.php?include=jenis-lensa&notif=tambahberhasil");
+        $sql = "INSERT INTO `jenis_lensa` (`jenis`) values ('$jenis_lensa')";
+        mysqli_query($koneksi, $sql);
+        header("Location:jenis-lensa_notif-tambahberhasil");
     }
 ?>

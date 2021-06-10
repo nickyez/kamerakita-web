@@ -24,7 +24,7 @@
                 $level = $data[1];
                 $_SESSION['id_user'] = $id_user;
                 $_SESSION['level'] = $level;
-                header('Location:index.php?include=profil');
+                header('Location:profil');
             }
         }
     }
