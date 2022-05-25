@@ -3,7 +3,7 @@ Website ini merupakan web katalog yang menggunakan bahasa php native dengan tekn
 
 Ada 2 tampilan pada website ini, yaitu tampilan admin dan user. untuk tampilan admin menggunakan template adminLTE yang sudah digunakan pada tugas UTS sebelumnya. untuk tampilan user menggunakan template dari Templateco . Pada tampilan admin digunakan untuk menambahkan, mengubah, menghapus data yang ada pada database dengan autentikasi username dan password sedangkan untuk tampilan user digunakan untuk menampilkan keseluruhan data yang dapat diakses tanpa melalui fitur login.
 
-Link Demo : 
+Link Demo : https://kamerakita.000webhostapp.com
 
 Anggota : 
 1. Hadi Ikhwanul Fuadi - 193140714111044
